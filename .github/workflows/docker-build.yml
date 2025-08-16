@@ -59,6 +59,7 @@ jobs:
       run: |
         echo "Registry: $DOCKER_REGISTRY"
         echo "Image Name: $DOCKER_IMAGE_NAME"
+        echo "DOCKER_USERNAME: $DOCKER_USERNAME"
         docker info
 
     - name: Extract metadata (tags, labels)
