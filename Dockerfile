@@ -39,8 +39,8 @@ COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/app ./app
 
 # 复制其他必要文件
-COPY --from=builder /app/.next ./.next 2>/dev/null || echo "No Next.js build"
-COPY --from=builder /app/public ./public 2>/dev/null || echo "No public directory"
+RUN cp -r /app/.next ./.next 2>/dev/null || echo "No Next.js build"
+RUN cp -r /app/public ./public 2>/dev/null || echo "No public directory"
 
 # 创建非 root 用户
 RUN addgroup -g 1001 -S nodejs
