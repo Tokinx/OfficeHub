@@ -9,10 +9,10 @@ WORKDIR /app
 RUN npm install -g pnpm
 
 # 复制 package 文件
-COPY package.json ./
+COPY package.json pnpm-lock.yaml ./
 
 # 安装依赖
-RUN pnpm install --no-frozen-lockfile
+RUN pnpm install --frozen-lockfile
 
 # 复制源代码
 COPY . .
@@ -29,10 +29,10 @@ WORKDIR /app
 RUN npm install -g pnpm
 
 # 复制 package 文件
-COPY package.json ./
+COPY package.json pnpm-lock.yaml ./
 
 # 安装生产依赖
-RUN pnpm install --prod --no-frozen-lockfile
+RUN pnpm install --prod --frozen-lockfile
 
 # 从构建阶段复制构建产物（根据你的项目结构调整）
 COPY --from=builder /app/dist ./dist
