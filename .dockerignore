@@ -1,0 +1,18 @@
+# .dockerignore
+node_modules
+.git
+.gitignore
+README.md
+.env
+.env.local
+.env.development
+.env.test
+*.log
+.nyc_output
+coverage
+.nyc_output
+.coverage
+.vscode
+.github
+Dockerfile
+.dockerignore
