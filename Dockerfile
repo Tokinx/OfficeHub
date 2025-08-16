@@ -9,7 +9,7 @@ WORKDIR /app
 RUN npm install -g pnpm
 
 # 复制 package 文件
-COPY package.json pnpm-lock.yaml ./
+COPY package.json ./
 
 # 安装依赖
 RUN pnpm install --no-frozen-lockfile
@@ -29,7 +29,7 @@ WORKDIR /app
 RUN npm install -g pnpm
 
 # 复制 package 文件
-COPY package.json pnpm-lock.yaml ./
+COPY package.json ./
 
 # 安装生产依赖
 RUN pnpm install --prod --no-frozen-lockfile
